@@ -1,6 +1,10 @@
 import requests
 
-def requestGet(url, tokenjwt):
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def requestGet(request, url):
+    tokenjwt = request.session['tokenJwt']
     headers = {
         'Authorization': f'Bearer {tokenjwt}',
         'Referer' : 'portal-phoenix-dev.arlepton.com'

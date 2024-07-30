@@ -15,7 +15,8 @@ def buscar(request):
    
 def listar(request):
     try:
-        data = listarColaboradores(request.POST.get('tokenJwt'))
+        request.session['tokenJwt'] = request.POST.get('tokenJwt')
+        data = listarColaboradores(request)
         return render(request, 'listarColaboradores.html', {'colaboradores': data})
     except Exception as e:
         return HttpResponse(e)
@@ -42,3 +43,4 @@ def gerarExcel(request):
         return response
     except Exception as e:
         return HttpResponse(e)
+        
