@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listar Colaboradores</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <div class = "row">
+        <div class="row text-center">
+          <h1>Listar Colaboradores</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-auto ms-auto"> 
+            <a href="/colaborador/gerarExcel" class="btn btn-primary">Gerar Excel</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for colaborador in colaboradores %}
+              <tr>
+                <td>{{ colaborador.id }}</td>
+                <td>{{ colaborador.name }}</td>
+                <td>{{ colaborador.username }}</td>
+                <td>{{ colaborador.email }}</td>
+                <td>{{ colaborador.phone }}</td>
+              </tr>
+              {% endfor %}    
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

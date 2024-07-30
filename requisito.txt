@@ -1,0 +1,3 @@
+- Cria uma telinha simples com Django ou Flask... botão clica e chama o ms-usuario pra trazer os nomes dos consultores.
+- Com os dados de retorno você gera um arquivo.XLSX com estes dados.
+- O CPF na coluna do excel você coloca uma máscara "059-XXX-686-46" para proteção  LGPD
