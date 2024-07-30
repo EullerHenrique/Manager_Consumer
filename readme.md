@@ -5,6 +5,7 @@
 5. Rode o comando: python manage.py startapp colaborador
 6. Rode o comando: pip install django-bootstrap-v5
 7. Rode o comando: pip install requests
+8. Rode o comand: pip install xlsxwriter
 
 https://www.youtube.com/watch?v=ahMwu-tJgIY&t=44s
 https://www.w3schools.com/django/django_add_bootstrap5.php

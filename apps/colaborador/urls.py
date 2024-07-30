@@ -19,8 +19,7 @@ from django.urls import path
 from apps.colaborador import views
 
 urlpatterns = [
-    path("", views.colaborador),
     path("buscar", views.buscar),
     path("listar", views.listar),
-    path("gerarExcel", views.gerarExcel)
+    path("gerarExcel", views.gerarExcel),
 ]
