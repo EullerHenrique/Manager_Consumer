@@ -8,7 +8,3 @@
 8. Rode o comando: pip install xlsxwriter
 9. Rode o comando: python manage.py migrate
 
-https://www.youtube.com/watch?v=ahMwu-tJgIY&t=44s
-https://www.w3schools.com/django/django_add_bootstrap5.php
-https://medium.com/@nutanbhogendrasharma/consume-rest-api-in-django-web-application-130c0daa6f70
-https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions
