@@ -12,30 +12,8 @@ def buscar(request):
    
 def listar(request):
     tokenjwt = request.POST.get('tokenJwt')
-    headers = {
-        'Authorization': f'Bearer {tokenjwt}',
-        'Referer' : 'portal-phoenix-dev.arlepton.com'
-    }
-    
-    response = requests.get('https://api-portal-dev.arlepton.com/ms-usuario/v1/usuarios/listar', headers=headers)
-    if response.status_code != 200:
-        if response.status_code == 401:
-            return HttpResponse(f'Status: {response.status_code} - Sem Autorização')
-        else: 
-            return HttpResponse(f'Status: {response.status_code} - Erro ao buscar colaboradores')
-    else:
-        json = response.json()
-        
-        status = json.get('status')
-        erro = json.get('error')
-        message = json.get('message')
-        data = json.get('data')
-
-        if status != 200:
-            return HttpResponse(f'Status: {status} - Erro: {erro} - Mensagem: {message}')
-        else:
-            return render(request, 'listarColaboradores.html', {'colaboradores': data})
-    
+    return obterColaboradores(tokenjwt)
+     
 def gerarExcel(request):
     response = requests.get('https://jsonplaceholder.typicode.com/users')
     colaboradores = response.json()
@@ -69,3 +47,29 @@ def gerarExcel(request):
     response["Content-Disposition"] = "attachment; filename=%s" % filename
 
     return response
+
+
+def obterColaboradores(tokenjwt):
+    headers = {
+        'Authorization': f'Bearer {tokenjwt}',
+        'Referer' : 'portal-phoenix-dev.arlepton.com'
+    }
+    
+    response = requests.get('https://api-portal-dev.arlepton.com/ms-usuario/v1/usuarios/listar', headers=headers)
+    if response.status_code != 200:
+        if response.status_code == 401:
+            return HttpResponse(f'Status: {response.status_code} - Sem Autorização')
+        else: 
+            return HttpResponse(f'Status: {response.status_code} - Erro ao buscar colaboradores')
+    else:
+        json = response.json()
+        
+        status = json.get('status')
+        erro = json.get('error')
+        message = json.get('message')
+        data = json.get('data')
+
+        if status != 200:
+            return HttpResponse(f'Status: {status} - Erro: {erro} - Mensagem: {message}')
+        else:
+            return data
