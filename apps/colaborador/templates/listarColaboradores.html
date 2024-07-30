@@ -24,21 +24,33 @@
           <table class="table">
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Username</th>
+                <th>Matricula</th>
+                <th>UserName</th>
+                <th>Nome</th>
                 <th>Email</th>
-                <th>Phone</th>
+                <th>Uf</th>
+                <th>Tipo Apuração </th>
+                <th>Tipo Vinculo</th>
+                <th>Area</th>
+                <th>Equipe</th>
+                <th>Empresa</th>
+
               </tr>
             </thead>
             <tbody>
               {% for colaborador in colaboradores %}
               <tr>
-                <td>{{ colaborador.id }}</td>
-                <td>{{ colaborador.name }}</td>
-                <td>{{ colaborador.username }}</td>
+                <td>{{ colaborador.matricula }}</td>
+                <td>{{ colaborador.userName }}</td>
+                <td>{{ colaborador.nome }}</td>
                 <td>{{ colaborador.email }}</td>
-                <td>{{ colaborador.phone }}</td>
+                <td>{{ colaborador.ufTrabalho }}</td>
+                <td>{{ colaborador.tipoApuracao }}</td>
+                <td>{{ colaborador.tipoVinculo }}</td>
+                <td>{{ colaborador.codigoArea }}</td>
+                <td>{{ colaborador.codigoEquipe }}</td>
+                <td>{{ colaborador.codigoEmpresa }}</td>
+
               </tr>
               {% endfor %}    
             </tbody>
