@@ -1,6 +1,7 @@
 
 import io
 import xlsxwriter
+import apps.colaborador.service.internal.util.mascara.mascaraUtilService as mascaraUtilService
 
 def gerarExcel(data, keys):
 
@@ -16,6 +17,8 @@ def gerarExcel(data, keys):
     for i in range(len(data)):
         for key, value in data[i].items():
             if key in keys:
+                if key == 'email':
+                    value = mascaraUtilService.mascararEmail(value)
                 worksheet.write(i+1, keys.index(key), value)
 
     worksheet.autofit()
