@@ -19,7 +19,8 @@ from django.urls import path
 from apps.colaborador import views
 
 urlpatterns = [
-    path("buscar", views.buscar),
-    path("listar", views.listar),
+    path("", views.exibirPaginaIndex),
+    path("buscar", views.exibirPaginaBuscarColaboradores),
+    path("listar", views.listarColaboradores),
     path("gerarExcel", views.gerarExcel),
 ]

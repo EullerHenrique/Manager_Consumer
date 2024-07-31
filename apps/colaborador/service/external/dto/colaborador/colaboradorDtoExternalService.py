@@ -1,4 +1,4 @@
-from apps.colaborador.service.external.util.http.httpServiceUtil import requestGet
+from apps.colaborador.service.external.util.http.httpUtilExternalService import requestGet
 
 
 def listarColaboradores(request):
