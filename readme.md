@@ -1,3 +1,17 @@
+# Manager Consumer
+
+## Tecnologias Utilizadas
+
+## Arquitetura 
+
+## Configuração
+
+## Execução
+
+## Telas
+
+## Endpoints
+
 1. Instale o Python: https://www.python.org/downloads/
 2. Rode o comando: pip install --upgrade pip
 3. Rode o comando: django-admin startproject manager_consumer
