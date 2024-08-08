@@ -2,6 +2,7 @@
 
 ## Descrição
 
+
 ## Tecnologias Utilizadas
 
 ### Front-end
@@ -30,7 +31,13 @@
 
 ## Telas
 
+## 
+
+## 
+
 ## Endpoints
 
+## 
 
+## 
 
