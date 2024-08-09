@@ -1,8 +1,9 @@
 from django.urls import path
-from app.colaborador import views
+from app.colaborador.controller import colaboradorController as controller  
+from app.colaborador.views import views as views
 
 urlpatterns = [
     path("buscar", views.exibirPaginaBuscarColaboradores),
-    path("listar", views.listarColaboradores),
-    path("gerarExcel", views.gerarExcel),
+    path("listar", controller.listarColaboradores),
+    path("gerarExcel", controller.gerarExcel),
 ]

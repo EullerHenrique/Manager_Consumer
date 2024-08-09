@@ -1,22 +1,16 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-
 import app.colaborador.service.external.dto.colaborador.colaboradorDtoExternalService as colaboradorDtoExternalService
 import app.colaborador.service.internal.util.relatorio.relatorioUtilService as relatorioUtilService
-   
-def exibirPaginaBuscarColaboradores(request):
-    return render(request, 'colaborador/buscarColaboradores.html')
-def exibirPaginaListarColaboradores(request, data):
-    return render(request, 'colaborador/listarColaboradores.html', {'colaboradores': data})
-
+import app.colaborador.views.views as views
 
 def listarColaboradores(request):
     try:
         request.session['tokenJwt'] = request.POST.get('tokenJwt', '').replace('"', '')
         data = colaboradorDtoExternalService.listarColaboradores(request)
-        exibirPaginaListarColaboradores(request, data)
+        views.exibirPaginaListarColaboradores(request, data)
     except Exception as e:
         return HttpResponse(e)
+    
 def gerarExcel(request):
     try:
         data = colaboradorDtoExternalService.listarColaboradores(request)
