@@ -1,3 +1,8 @@
 - Cria uma telinha simples com Django ou Flask... botão clica e chama o ms-usuario pra trazer os nomes dos consultores.
 - Com os dados de retorno você gera um arquivo.XLSX com estes dados.
 - O CPF na coluna do excel você coloca uma máscara "059-XXX-686-46" para proteção  LGPD
+
+https://www.youtube.com/watch?v=ahMwu-tJgIY&t=44s
+https://www.w3schools.com/django/django_add_bootstrap5.php
+https://medium.com/@nutanbhogendrasharma/consume-rest-api-in-django-web-application-130c0daa6f70
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions

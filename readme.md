@@ -22,8 +22,9 @@
   1. pip install --upgrade pip
   2. pip install requests
   3. pip install xlsxwriter
-  4. pip install django-bootstrap-v5
-  5. python manage.py migrate
+  4. pip install python-dotenv
+  5. pip install django-bootstrap-v5
+  6. python manage.py migrate
 
 ## Execução
 - Rode o comando:
